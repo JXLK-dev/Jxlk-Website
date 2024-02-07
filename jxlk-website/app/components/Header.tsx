@@ -8,32 +8,58 @@ export const Header = () => {
     isHidden = !isHidden;
     setIsHidden(isHidden);
   }
+  const navbarChildAnimation = {
+    hidden: {
+      opacity: 0,
+    },
+    show: {
+      opacity: 1,
+    },
+  };
+  const navbarParent = {
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 1,
+      },
+    },
+    hidden: {
+      opacity: 0,
+    },
+  };
+  const containerNavBar = {
+    hidden: {},
+    show: {
+      transition: {
+        delayChildren: 4,
+      },
+    },
+  };
   return (
     <motion.div
-      classNameName="text-black"
+      className="text-black"
       initial="initial"
       animate="loading"
-      variants={{
-        initial: {
-          opacity: 0,
-        },
-        loading: {
-          opacity: 1,
-          transition: {
-            delay: 4,
-            duration: 1,
-          },
-        },
-      }}
+      // variants={{
+      //   initial: {
+      //     opacity: 0,
+      //   },
+      //   loading: {
+      //     opacity: 1,
+      //     transition: {
+      //       delay: 4,
+      //     },
+      //   },
+      // }}
     >
-      <nav className="border-gray-200 bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
-        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+      <motion.nav className="border-gray-200 ">
+        <motion.div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+          <span className="text-black self-center text-2xl font-semibold whitespace-nowrap ">
             JERRY
           </span>
           <button
             type="button"
-            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 "
             onClick={removeHiddenClass}
           >
             <span className="sr-only">Open main menu</span>
@@ -47,48 +73,54 @@ export const Header = () => {
               <path stroke="currentColor" d="M1 1h15M1 7h15M1 13h15" />
             </svg>
           </button>
-          <div
+          <motion.div
             className={`${isHidden ? "hidden" : ""} w-full md:block md:w-auto`}
             id="navbar-solid-bg"
+            initial="hidden"
+            animate="show"
+            variants={containerNavBar}
           >
-            <motion.ul className="flex flex-col font-medium mt-4 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent dark:bg-gray-800 md:dark:bg-transparent dark:border-gray-700">
-              <li>
+            <motion.ul
+              className="flex flex-col font-medium mt-4 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent"
+              variants={navbarParent}
+            >
+              <motion.li variants={navbarChildAnimation}>
                 <a
                   href="#"
-                  className="block py-2 px-3 md:p-0 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent"
+                  className="block py-2 px-3 md:p-0 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:md:"
                   aria-current="page"
                 >
                   Home
                 </a>
-              </li>
-              <li>
+              </motion.li>
+              <motion.li variants={navbarChildAnimation}>
                 <a
                   href="#"
-                  className="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                  className="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:"
                 >
                   Services
                 </a>
-              </li>
-              <li>
+              </motion.li>
+              <motion.li variants={navbarChildAnimation}>
                 <a
                   href="#"
-                  className="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                  className="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:"
                 >
                   Pricing
                 </a>
-              </li>
-              <li>
+              </motion.li>
+              <motion.li variants={navbarChildAnimation}>
                 <a
                   href="#"
-                  className="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                  className="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:"
                 >
                   Contact
                 </a>
-              </li>
+              </motion.li>
             </motion.ul>
-          </div>
-        </div>
-      </nav>
+          </motion.div>
+        </motion.div>
+      </motion.nav>
     </motion.div>
   );
 };
