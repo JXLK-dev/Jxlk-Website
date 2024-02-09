@@ -11,16 +11,18 @@ export const Header = () => {
   const navbarChildAnimation = {
     hidden: {
       opacity: 0,
+      transform: "translate(0px,50px)",
     },
     show: {
       opacity: 1,
+      transform: "translate(0px,0px)",
     },
   };
   const navbarParent = {
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 1,
+        staggerChildren: 0.5,
       },
     },
     hidden: {
@@ -28,35 +30,25 @@ export const Header = () => {
     },
   };
   const containerNavBar = {
-    hidden: {},
+    hidden: {
+      opacity: 0,
+    },
     show: {
+      opacity: 1,
       transition: {
-        delayChildren: 4,
+        delayChildren: 0,
       },
     },
   };
+  const elevatedButtonClass =
+    "md:px-4 md:py-1 md:hover:text-white md:hover:bg-slate-800";
   return (
-    <motion.div
-      className="text-black"
-      initial="initial"
-      animate="loading"
-      // variants={{
-      //   initial: {
-      //     opacity: 0,
-      //   },
-      //   loading: {
-      //     opacity: 1,
-      //     transition: {
-      //       delay: 4,
-      //     },
-      //   },
-      // }}
-    >
+    <motion.div className="text-black" initial="initial" animate="loading">
       <motion.nav className="border-gray-200 ">
         <motion.div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-          <span className="text-black self-center text-2xl font-semibold whitespace-nowrap ">
+          <motion.span className="text-black self-center text-2xl font-semibold whitespace-nowrap ">
             JERRY
-          </span>
+          </motion.span>
           <button
             type="button"
             className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 "
@@ -74,7 +66,7 @@ export const Header = () => {
             </svg>
           </button>
           <motion.div
-            className={`${isHidden ? "hidden" : ""} w-full md:block md:w-auto`}
+            className={`${isHidden ? "hidden" : ""} w-full md:block md:w-auto `}
             id="navbar-solid-bg"
             initial="hidden"
             animate="show"
@@ -87,32 +79,32 @@ export const Header = () => {
               <motion.li variants={navbarChildAnimation}>
                 <a
                   href="#"
-                  className="block py-2 px-3 md:p-0 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:md:"
+                  className={`block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 ${elevatedButtonClass}`}
                   aria-current="page"
                 >
-                  Home
+                  About
                 </a>
               </motion.li>
               <motion.li variants={navbarChildAnimation}>
                 <a
                   href="#"
-                  className="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:"
+                  className={`block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 ${elevatedButtonClass}`}
                 >
-                  Services
+                  Project
                 </a>
               </motion.li>
               <motion.li variants={navbarChildAnimation}>
                 <a
                   href="#"
-                  className="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:"
+                  className={`block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 ${elevatedButtonClass}`}
                 >
-                  Pricing
+                  Work
                 </a>
               </motion.li>
               <motion.li variants={navbarChildAnimation}>
                 <a
                   href="#"
-                  className="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:"
+                  className={`block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 ${elevatedButtonClass}`}
                 >
                   Contact
                 </a>
