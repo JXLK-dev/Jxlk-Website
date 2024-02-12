@@ -11,11 +11,13 @@ export const Header = () => {
   const navbarChildAnimation = {
     hidden: {
       opacity: 0,
+      height: "30px",
       transform: "translate(0px,50px)",
     },
     show: {
       opacity: 1,
       transform: "translate(0px,0px)",
+      height: "30px",
     },
   };
   const navbarParent = {
@@ -41,9 +43,9 @@ export const Header = () => {
     },
   };
   const elevatedButtonClass =
-    "md:px-4 md:py-1 md:hover:text-white md:hover:bg-slate-800";
+    "md:px-4 md:py-1 md:rounded-2xl md:hover:border-[3px] md:hover:border-black md:animate-[exitFloating_2s] md:hover:shadow-xl md:transition md:hover:duration-500 md:hover:motion-safe:animate-[slowFloating_3s_infinite] font-extrabold ";
   return (
-    <motion.div className="text-black" initial="initial" animate="loading">
+    <motion.div className="text-black h-10" initial="initial" animate="loading">
       <motion.nav className="border-gray-200 ">
         <motion.div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <motion.span className="text-black self-center text-2xl font-semibold whitespace-nowrap ">
@@ -51,7 +53,7 @@ export const Header = () => {
           </motion.span>
           <button
             type="button"
-            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 "
+            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
             onClick={removeHiddenClass}
           >
             <span className="sr-only">Open main menu</span>

@@ -1,20 +1,38 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "gradient-conic":
+          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      },
+      keyframes: {
+        slowFloating: {
+          "0%": { transform: " translate(0px,0px)" },
+          "20%": { transform: " translate(0px,-7px)" },
+          "40%": { transform: " translate(0px,-4px)" },
+          "70%": { transform: " translate(0px,-10px)" },
+          "100%": { transform: " translate(0px,0px)" },
+        },
+        exitFloating: {
+          "0%": { transform: "translate(0px,0px)" },
+          "50%": { transform: "translate(0px,10px)" },
+          "100%": { transform: "translate(0px,0px)" },
+        },
+      },
+      animation: {
+        floating: "slowFloating 3s transition infinite",
+        exitFloating: "exitFloating 2s transition",
       },
     },
   },
   plugins: [],
-}
-export default config
+};
+export default config;
