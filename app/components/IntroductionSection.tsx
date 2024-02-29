@@ -36,7 +36,7 @@ export const IntroductionSection = () => {
     },
   };
   return (
-    <div className="pt-32 block w-1/2 m-auto md:w-full md:flex md:justify-center md:items-center">
+    <div className="pt-32 pb-[400px] block w-1/2 m-auto md:w-full md:flex md:justify-center md:items-center">
       <motion.div initial="hidden" animate="show" variants={image}>
         <Image
           className="rounded-full border-[5px] border-black h-[40vh] w-auto m-auto"
@@ -46,17 +46,24 @@ export const IntroductionSection = () => {
           alt="Profile picture"
         />
       </motion.div>
-      <div className="text-justify mt-10 md:w-2/5 md:ml-10">
+      <div className="text-justify mt-10 md:w-2/5 md:ml-10 md:pb-10">
         <motion.div
           className=""
           initial="hidden"
           animate="show"
           variants={introParagraph}
         >
-          <h1 className="text-center md:text-left md:text-4xl">
+          <h1 className="text-center md:text-left md:text-6xl md:pb-3">
             Hi there, I&apos;m Jerry
           </h1>
+          <h2 className="text-center md:text-left md:text-4xl md:pb-7 flex">
+            I&apos;m a{" "}
+            <div className="md:animate-[slowfloating_3s_infinite] w-fit md:ml-5 text-green-500">
+              Software Engineer
+            </div>
+          </h2>
         </motion.div>
+
         <motion.div initial="hidden" animate="show" variants={introParagraph}>
           <p className="md:text-xl">
             Welcome to my personal website! a final year college student
@@ -79,7 +86,7 @@ export const IntroductionSection = () => {
           <a
             href="https://www.github.com/jxlk-dev"
             type="button"
-            class="text-white cursor-pointer bg-[#24292F] hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 mb-2 hover:animate-bounce animate-[exitFloating_2s]"
+            class="text-white cursor-pointer bg-[#24292F] hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 mb-2 hover:animate-[slowfloating_3s_infinite] animate-[exitFloating_2s]"
           >
             <svg
               className="w-5 h-5 me-2"
@@ -99,7 +106,7 @@ export const IntroductionSection = () => {
           <a
             href="https://www.linkedin.com/in/jerry-developer"
             type="button"
-            class="text-black border-2 border-black cursor-pointer bg-white hover:bg-white/90 focus:ring-4 focus:outline-none focus:ring-white/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 mb-2 hover:animate-bounce animate-[exitFloating_2s]"
+            class="text-black border-2 border-black cursor-pointer bg-white hover:bg-white/90 focus:ring-4 focus:outline-none focus:ring-white/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 mb-2 hover:animate-[slowfloating_3s_infinite] animate-[exitFloating_2s]"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -114,7 +121,7 @@ export const IntroductionSection = () => {
           <a
             href="mailto:jerrybudiman03@gmail.com"
             type="button"
-            class="text-black border-2 border-black cursor-pointer bg-white hover:bg-white/90 focus:ring-4 focus:outline-none focus:ring-white/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 mb-2 hover:animate-bounce animate-[exitFloating_2s]"
+            class="text-black border-2 border-black cursor-pointer bg-white hover:bg-white/90 focus:ring-4 focus:outline-none focus:ring-white/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 mb-2 hover:animate-[slowfloating_3s_infinite] animate-[exitFloating_2s]"
           >
             <svg
               class="w-5 h-5 mr-5 text-gray-700"

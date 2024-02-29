@@ -33,6 +33,19 @@ const config: Config = {
             color: "black",
           },
         },
+        slowfloating: {
+          "0%": {
+            transform: " translate(0px,0px)",
+          },
+          "20%": { transform: " translate(0px,-7px)" },
+          "40%": {
+            transform: " translate(0px,-4px)",
+          },
+          "70%": { transform: " translate(0px,-10px)" },
+          "100%": {
+            transform: " translate(0px,0px)",
+          },
+        },
         exitFloating: {
           "0%": { transform: "translate(0px,0px)", borderWidth: "3px" },
           "15%": { borderWidth: "0px" },
@@ -48,6 +61,7 @@ const config: Config = {
       animation: {
         blinking: "blinking 2s transition infinite",
         floating: "slowFloating 3s transition infinite",
+        slowfloating: "slowFloating 3s transition infinite",
         exitFloating: "exitFloating 2s transition",
       },
     },

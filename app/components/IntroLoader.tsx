@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export const IntroLoader = () => (
   <motion.div
-    className="absolute"
+    className="fixed"
     initial="onLoad"
     animate="loaded"
     variants={{
