@@ -20,7 +20,6 @@ export const IntroLoader = () => (
         height: "0vh",
         transition: {
           when: "afterChildren",
-          ease: "easeOut",
           delay: 2,
           duration: 1.5,
         },
@@ -37,7 +36,6 @@ export const IntroLoader = () => (
         },
         loading: {
           opacity: [0, 1, 1, 1, 0, 0, 0],
-          ease: "easeOut",
           top: ["50%", "40%", "40%", "30%", "0%"],
           transition: {
             duration: 4,
@@ -58,7 +56,6 @@ export const IntroLoader = () => (
         },
         loading: {
           opacity: [0, 0, 1, 1, 0, 0, 0],
-          ease: "easeOut",
           top: ["60%", "50%", "50%", "45%", "0%"],
           transition: {
             duration: 4,
