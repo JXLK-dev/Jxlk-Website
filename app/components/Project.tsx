@@ -1,5 +1,6 @@
+"use client";
 import React from "react";
 
-const Project = () => {
-  return <div></div>;
+export const Project = () => {
+  return <div className="text-6xl w-full">Project</div>;
 };

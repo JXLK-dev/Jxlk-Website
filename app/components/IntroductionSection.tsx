@@ -36,7 +36,7 @@ export const IntroductionSection = () => {
     },
   };
   return (
-    <div className="text-black pt-32 block w-1/2 m-auto md:w-full md:flex md:justify-center md:items-center">
+    <div className="pt-32 block w-1/2 m-auto md:w-full md:flex md:justify-center md:items-center">
       <motion.div initial="hidden" animate="show" variants={image}>
         <Image
           className="rounded-full border-[5px] border-black h-[40vh] w-auto m-auto"
@@ -70,14 +70,16 @@ export const IntroductionSection = () => {
             growth!
           </p>
         </motion.div>
-        <motion.div className="mt-5">
+        <motion.div
+          className="mt-5"
+          initial="hidden"
+          animate="show"
+          variants={introParagraph}
+        >
           <a
             href="https://www.github.com/jxlk-dev"
-            initial="hidden"
-            animate="show"
-            variants={introParagraph}
             type="button"
-            class="text-white cursor-pointer bg-[#24292F] hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 mb-2 hover:animate-pulse"
+            class="text-white cursor-pointer bg-[#24292F] hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 mb-2 hover:animate-bounce animate-[exitFloating_2s]"
           >
             <svg
               className="w-5 h-5 me-2"
@@ -96,11 +98,8 @@ export const IntroductionSection = () => {
           </a>
           <a
             href="https://www.linkedin.com/in/jerry-developer"
-            initial="hidden"
-            animate="show"
-            variants={introParagraph}
             type="button"
-            class="text-black border-2 border-black cursor-pointer bg-white hover:bg-white/90 focus:ring-4 focus:outline-none focus:ring-white/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 mb-2 hover:animate-pulse"
+            class="text-black border-2 border-black cursor-pointer bg-white hover:bg-white/90 focus:ring-4 focus:outline-none focus:ring-white/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 mb-2 hover:animate-bounce animate-[exitFloating_2s]"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -111,6 +110,23 @@ export const IntroductionSection = () => {
               <path d="M41,4H9C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9C46,6.24,43.76,4,41,4z M17,20v19h-6V20H17z M11,14.47c0-1.4,1.2-2.47,3-2.47s2.93,1.07,3,2.47c0,1.4-1.12,2.53-3,2.53C12.2,17,11,15.87,11,14.47z M39,39h-6c0,0,0-9.26,0-10 c0-2-1-4-3.5-4.04h-0.08C27,24.96,26,27.02,26,29c0,0.91,0,10,0,10h-6V20h6v2.56c0,0,1.93-2.56,5.81-2.56 c3.97,0,7.19,2.73,7.19,8.26V39z"></path>
             </svg>
             LinkedIn
+          </a>
+          <a
+            href="mailto:jerrybudiman03@gmail.com"
+            type="button"
+            class="text-black border-2 border-black cursor-pointer bg-white hover:bg-white/90 focus:ring-4 focus:outline-none focus:ring-white/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 mb-2 hover:animate-bounce animate-[exitFloating_2s]"
+          >
+            <svg
+              class="w-5 h-5 mr-5 text-gray-700"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 20 16"
+            >
+              <path d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z"></path>
+              <path d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z"></path>
+            </svg>
+            Contact me
           </a>
         </motion.div>
       </div>

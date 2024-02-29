@@ -45,14 +45,10 @@ export const Header = () => {
   const elevatedButtonClass =
     "md:px-4 md:py-1 md:rounded-2xl md:hover:border-[3px] md:hover:border-black md:animate-[exitFloating_2s] md:hover:shadow-xl md:transition md:hover:duration-500 md:hover:motion-safe:animate-[slowFloating_3s_infinite] font-extrabold ";
   return (
-    <motion.div
-      className="text-black h-fit sticky"
-      initial="initial"
-      animate="loading"
-    >
+    <motion.div className="h-fit sticky" initial="initial" animate="loading">
       <motion.nav className="border-gray-200 ">
         <motion.div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-          <motion.span className="text-black self-center text-2xl font-semibold whitespace-nowrap md:rounded-xl md:p-2">
+          <motion.span className="self-center text-2xl font-semibold whitespace-nowrap md:rounded-xl md:p-2">
             JERRY
           </motion.span>
           <button
@@ -85,7 +81,7 @@ export const Header = () => {
               <motion.li variants={navbarChildAnimation}>
                 <a
                   href="#"
-                  className={`block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 ${elevatedButtonClass}`}
+                  className={`block py-2 px-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 ${elevatedButtonClass}`}
                   aria-current="page"
                 >
                   About
@@ -94,7 +90,7 @@ export const Header = () => {
               <motion.li variants={navbarChildAnimation}>
                 <a
                   href="#"
-                  className={`block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 ${elevatedButtonClass}`}
+                  className={`block py-2 px-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 ${elevatedButtonClass}`}
                 >
                   Project
                 </a>
@@ -102,7 +98,7 @@ export const Header = () => {
               <motion.li variants={navbarChildAnimation}>
                 <a
                   href="#"
-                  className={`block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 ${elevatedButtonClass}`}
+                  className={`block py-2 px-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 ${elevatedButtonClass}`}
                 >
                   Work
                 </a>
@@ -110,7 +106,7 @@ export const Header = () => {
               <motion.li variants={navbarChildAnimation}>
                 <a
                   href="#"
-                  className={`block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 ${elevatedButtonClass}`}
+                  className={`block py-2 px-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 ${elevatedButtonClass}`}
                 >
                   Contact
                 </a>
