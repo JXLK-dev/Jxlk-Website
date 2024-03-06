@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import React from "react";
 
 export const Header = () => {
   let [isHidden, setIsHidden] = useState(true);
@@ -42,8 +43,24 @@ export const Header = () => {
       },
     },
   };
+  const headerLabels = ["About", "Project", "Experience", "Contact"];
+  const headerHref = ["#", "#", "#", "#"];
+  let headerList = [];
   const elevatedButtonClass =
     "md:px-4 md:py-1 md:rounded-2xl md:hover:border-[3px] md:hover:border-black md:animate-[exitFloating_2s] md:hover:shadow-xl md:transition md:hover:duration-500 md:hover:motion-safe:animate-[slowFloating_3s_infinite] font-extrabold ";
+  headerLabels.forEach((label, index) => {
+    headerList.push(
+      <motion.li variants={navbarChildAnimation}>
+        <a
+          href={headerHref[index]}
+          className={`block py-2 px-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 ${elevatedButtonClass}`}
+          aria-current="page"
+        >
+          {label}
+        </a>
+      </motion.li>
+    );
+  });
   return (
     <motion.div className="h-fit sticky top-0 z-10">
       <motion.nav className="border-gray-200">
@@ -78,39 +95,7 @@ export const Header = () => {
               className="flex flex-col font-medium mt-4 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent"
               variants={navbarParent}
             >
-              <motion.li variants={navbarChildAnimation}>
-                <a
-                  href="#"
-                  className={`block py-2 px-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 ${elevatedButtonClass}`}
-                  aria-current="page"
-                >
-                  About
-                </a>
-              </motion.li>
-              <motion.li variants={navbarChildAnimation}>
-                <a
-                  href="#"
-                  className={`block py-2 px-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 ${elevatedButtonClass}`}
-                >
-                  Project
-                </a>
-              </motion.li>
-              <motion.li variants={navbarChildAnimation}>
-                <a
-                  href="#"
-                  className={`block py-2 px-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 ${elevatedButtonClass}`}
-                >
-                  Work
-                </a>
-              </motion.li>
-              <motion.li variants={navbarChildAnimation}>
-                <a
-                  href="#"
-                  className={`block py-2 px-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 ${elevatedButtonClass}`}
-                >
-                  Contact
-                </a>
-              </motion.li>
+              {headerList}
             </motion.ul>
           </motion.div>
         </motion.div>
