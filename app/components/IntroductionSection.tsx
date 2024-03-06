@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -86,7 +85,7 @@ export const IntroductionSection = () => {
           <a
             href="https://www.github.com/jxlk-dev"
             type="button"
-            class="text-white cursor-pointer bg-[#24292F] hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 mb-2 hover:animate-[slowfloating_3s_infinite] animate-[exitFloating_2s]"
+            className="text-white cursor-pointer bg-[#24292F] hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 mb-2 hover:animate-[slowfloating_3s_infinite] animate-[exitFloating_2s]"
           >
             <svg
               className="w-5 h-5 me-2"
@@ -106,7 +105,7 @@ export const IntroductionSection = () => {
           <a
             href="https://www.linkedin.com/in/jerry-developer"
             type="button"
-            class="text-black border-2 border-black cursor-pointer bg-white hover:bg-white/90 focus:ring-4 focus:outline-none focus:ring-white/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 mb-2 hover:animate-[slowfloating_3s_infinite] animate-[exitFloating_2s]"
+            className="text-black border-2 border-black cursor-pointer bg-white hover:bg-white/90 focus:ring-4 focus:outline-none focus:ring-white/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 mb-2 hover:animate-[slowfloating_3s_infinite] animate-[exitFloating_2s]"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -121,10 +120,10 @@ export const IntroductionSection = () => {
           <a
             href="mailto:jerrybudiman03@gmail.com"
             type="button"
-            class="text-black border-2 border-black cursor-pointer bg-white hover:bg-white/90 focus:ring-4 focus:outline-none focus:ring-white/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 mb-2 hover:animate-[slowfloating_3s_infinite] animate-[exitFloating_2s]"
+            className="text-black border-2 border-black cursor-pointer bg-white hover:bg-white/90 focus:ring-4 focus:outline-none focus:ring-white/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 mb-2 hover:animate-[slowfloating_3s_infinite] animate-[exitFloating_2s]"
           >
             <svg
-              class="w-5 h-5 mr-5 text-gray-700"
+              className="w-5 h-5 mr-5 text-gray-700"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"

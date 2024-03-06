@@ -1,3 +1,4 @@
+"use client";
 import { IntroLoader } from "../app/components/IntroLoader";
 import { Header } from "../app/components/Header";
 import { Testing } from "../app/components/Testing";

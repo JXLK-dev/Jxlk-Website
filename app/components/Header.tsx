@@ -1,4 +1,3 @@
-"use client";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import React from "react";
@@ -45,7 +44,7 @@ export const Header = () => {
   };
   const headerLabels = ["About", "Project", "Experience", "Contact"];
   const headerHref = ["#", "#", "#", "#"];
-  let headerList = [];
+  let headerList: JSX.Element[] = [];
   const elevatedButtonClass =
     "md:px-4 md:py-1 md:rounded-2xl md:hover:border-[3px] md:hover:border-black md:animate-[exitFloating_2s] md:hover:shadow-xl md:transition md:hover:duration-500 md:hover:motion-safe:animate-[slowFloating_3s_infinite] font-extrabold ";
   headerLabels.forEach((label, index) => {
