@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Sphere } from "../app/components/Sphere";
 export const IntroductionSection = () => {
   const image = {
     hidden: {

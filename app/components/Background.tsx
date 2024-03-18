@@ -10,7 +10,7 @@ export const Background = ({ label }: { label: string }) => {
   const cubeRef =
     useRef<THREE.Mesh<THREE.BoxGeometry, THREE.MeshBasicMaterial>>();
   const torusRef =
-    useRef<THREE.Mesh<THREE.SphereGeometry, THREE.MeshBasicMaterial>>();
+    useRef<THREE.Points<THREE.TorusGeometry, THREE.PointsMaterial>>();
   useEffect(() => {
     // Create scene
     const scene = new THREE.Scene();
@@ -94,10 +94,19 @@ export const Background = ({ label }: { label: string }) => {
       container.appendChild(renderer.domElement);
     }
 
+    document.addEventListener("mousemove", animateParticles);
+    let mouseX = 0;
+    let mouseY = 0;
+    function animateParticles(event: MouseEvent) {
+      mouseX = event.clientX;
+      mouseY = event.clientY;
+    }
+    const clock = new THREE.Clock();
     // Animation loop
     const animate = () => {
       requestAnimationFrame(animate);
-
+      const elapsedTime = clock.getElapsedTime();
+      particlesMesh.rotation.y = mouseY * (elapsedTime * 0.00008);
       torus.rotation.y += 0.001;
       torus.rotation.x += 0.001;
       // Render scene with camera
