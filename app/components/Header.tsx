@@ -46,7 +46,7 @@ export const Header = () => {
   const headerHref = ["#", "#", "#", "#"];
   let headerList: JSX.Element[] = [];
   const elevatedButtonClass =
-    "md:px-4 md:py-1 md:rounded-2xl md:hover:border-[3px] md:hover:border-black md:animate-[exitFloating_2s] md:hover:shadow-xl md:transition md:hover:duration-500 md:hover:motion-safe:animate-[slowFloating_3s_infinite] font-extrabold ";
+    "bg-transparent md:px-4 md:py-1 md:rounded-2xl md:hover:border-[3px] md:hover:border-black md:animate-[exitFloating_2s] md:hover:shadow-xl md:transition md:hover:duration-500 md:hover:motion-safe:animate-[slowFloating_3s_infinite] font-extrabold ";
   headerLabels.forEach((label, index) => {
     headerList.push(
       <motion.li variants={navbarChildAnimation}>
@@ -61,7 +61,7 @@ export const Header = () => {
     );
   });
   return (
-    <motion.div className="h-fit sticky top-0 z-10">
+    <motion.div className=" h-fit sticky top-0 z-10">
       <motion.nav className="border-gray-200">
         <motion.div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <motion.span className="self-center text-2xl font-semibold whitespace-nowrap md:rounded-xl md:p-2">

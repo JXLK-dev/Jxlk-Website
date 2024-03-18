@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { Sphere } from "../app/components/Sphere";
 export const IntroductionSection = () => {
   const image = {
     hidden: {
@@ -35,7 +36,7 @@ export const IntroductionSection = () => {
     },
   };
   return (
-    <div className="pt-32 pb-[400px] block w-1/2 m-auto md:w-full md:flex md:justify-center md:items-center">
+    <div className="pt-32 pb-[400px] block w-1/2 m-auto xl:w-full xl:flex xl:justify-center xl:items-center">
       <motion.div initial="hidden" animate="show" variants={image}>
         <Image
           className="rounded-full border-[5px] border-black h-[40vh] w-auto m-auto"
@@ -45,26 +46,26 @@ export const IntroductionSection = () => {
           alt="Profile picture"
         />
       </motion.div>
-      <div className="text-justify mt-10 md:w-2/5 md:ml-10 md:pb-10">
+      <div className="text-justify mt-10 xl:w-2/5 xl:ml-10 xl:pb-10">
         <motion.div
           className=""
           initial="hidden"
           animate="show"
           variants={introParagraph}
         >
-          <h1 className="text-center md:text-left md:text-6xl md:pb-3">
+          <h1 className="text-center xl:text-left xl:text-6xl xl:pb-3">
             Hi there, I&apos;m Jerry
           </h1>
-          <h2 className="text-center md:text-left md:text-4xl md:pb-7 flex">
+          <h2 className="text-center xl:text-left xl:text-4xl xl:pb-7 flex">
             I&apos;m a{" "}
-            <div className="md:animate-[slowfloating_3s_infinite] w-fit md:ml-5 text-green-500">
+            <div className="xl:animate-[slowfloating_3s_infinite] w-fit xl:ml-5 text-green-500">
               Software Engineer
             </div>
           </h2>
         </motion.div>
 
         <motion.div initial="hidden" animate="show" variants={introParagraph}>
-          <p className="md:text-xl">
+          <p className="xl:text-xl">
             Welcome to my personal website! a final year college student
             pursuing my degree at Bina Nusantara University. As an enthusiastic
             programmer, I&apos;ve dedicated my academic journey to mastering the

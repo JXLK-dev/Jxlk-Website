@@ -53,9 +53,9 @@ const config: Config = {
           "100%": { transform: "translate(0px,0px)" },
         },
         blinking: {
-          "0%": { backgroundColor: "white", color: "black" },
-          "50%": { backgroundColor: "black", color: "white" },
-          "100%": { backgroundColor: "white", color: "black" },
+          "0%": { backgroundColor: "transparent", color: "black" },
+          "50%": { backgroundColor: "black", color: "transparent" },
+          "100%": { backgroundColor: "transparent", color: "black" },
         },
       },
       animation: {
