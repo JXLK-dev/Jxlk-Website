@@ -67,6 +67,7 @@ export const Background = ({ label }: { label: string }) => {
     const particleMaterial = new THREE.PointsMaterial({
       color: "#BDFFFE",
       size: 0.005,
+      blending: THREE.AdditiveBlending,
     });
 
     const particlesGeometry = new THREE.BufferGeometry();
