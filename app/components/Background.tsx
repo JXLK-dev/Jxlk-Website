@@ -9,7 +9,7 @@ export const Background = ({ label }: { label: string }) => {
   const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
   const cubeRef =
     useRef<THREE.Mesh<THREE.BoxGeometry, THREE.MeshBasicMaterial>>();
-  const sphereRef =
+  const torusRef =
     useRef<THREE.Mesh<THREE.SphereGeometry, THREE.MeshBasicMaterial>>();
   useEffect(() => {
     // Create scene
@@ -64,13 +64,28 @@ export const Background = ({ label }: { label: string }) => {
       color: "#BDFFFE",
       size: 0.01,
     });
+    const particleMaterial = new THREE.PointsMaterial({
+      color: "#BDFFFE",
+      size: 0.005,
+    });
 
+    const particlesGeometry = new THREE.BufferGeometry();
+    const particlesCnt = 5000;
+    const posArray = new Float32Array(particlesCnt * 3);
+    for (let i = 0; i < particlesCnt * 3; i++) {
+      posArray[i] = (Math.random() - 0.5) * 5;
+    }
+    particlesGeometry.setAttribute(
+      "position",
+      new THREE.BufferAttribute(posArray, 3)
+    );
     // Create the mesh with the geometry and material
     const torus = new THREE.Points(torusGeometry, torusMaterial);
 
-    sphereRef.current = torus;
+    torusRef.current = torus;
     // Add the torus to the scene
-    scene.add(torus);
+    const particlesMesh = new THREE.Points(particlesGeometry, torusMaterial);
+    scene.add(torus, particlesMesh);
 
     // Add renderer to container
     const container = containerRef.current;
