@@ -49,7 +49,7 @@ export const Header = () => {
     "bg-transparent md:px-4 md:py-1 md:rounded-2xl md:hover:border-[3px] md:hover:border-black md:animate-[exitFloating_2s] md:hover:shadow-xl md:transition md:hover:duration-500 md:hover:motion-safe:animate-[slowFloating_3s_infinite] font-extrabold ";
   headerLabels.forEach((label, index) => {
     headerList.push(
-      <motion.li variants={navbarChildAnimation}>
+      <motion.li key={index} variants={navbarChildAnimation}>
         <a
           href={headerHref[index]}
           className={`block py-2 px-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 ${elevatedButtonClass}`}

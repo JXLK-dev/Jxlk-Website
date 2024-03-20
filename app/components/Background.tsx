@@ -7,8 +7,6 @@ export const Background = ({ label }: { label: string }) => {
   const sceneRef = useRef<THREE.Scene | null>(null);
   const cameraRef = useRef<THREE.PerspectiveCamera | null>(null);
   const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
-  const cubeRef =
-    useRef<THREE.Mesh<THREE.BoxGeometry, THREE.MeshBasicMaterial>>();
   const torusRef =
     useRef<THREE.Points<THREE.TorusGeometry, THREE.PointsMaterial>>();
   useEffect(() => {
@@ -34,30 +32,7 @@ export const Background = ({ label }: { label: string }) => {
     renderer.setClearColor(0xffffff, -1);
     rendererRef.current = renderer;
 
-    // Create cube
-    // const geometry = new THREE.TorusGeometry(10, 3, 16, 100);
-    // const material = new THREE.MeshBasicMaterial({
-    //   color: "red",
-    // });
-    // const cube = new THREE.Mesh(geometry, material);
-    // cubeRef.current = cube;
-    // scene.add(cube);
-
-    // Add text
-    // const fontLoader = new FontLoader();
-    // // fontLoader.load("fonts/helvetiker_regular.typeface.json", (font) => {
-    // const textGeometry = new TextGeometry("Hello, World!", {
-    //   size: 1,
-    //   height: 1,
-    // });
-    // const textMaterial = new THREE.MeshBasicMaterial({ color: "white" });
-    // const textMesh = new THREE.Mesh(textGeometry, textMaterial);
-    // textMesh.position.set(0, 0, 0);
-    // cube.attach(textMesh);
-    // scene.add(cube);
-    // });
-
-    const torusGeometry = new THREE.TorusGeometry(1, 0.2, 16, 100);
+    const torusGeometry = new THREE.TorusGeometry(1, 0.2, 32, 200);
 
     // Create the material with the texture
     const torusMaterial = new THREE.PointsMaterial({
@@ -95,6 +70,35 @@ export const Background = ({ label }: { label: string }) => {
     }
 
     document.addEventListener("mousemove", animateParticles);
+    document.addEventListener("wheel", zoomTorus, false);
+    window.addEventListener("resize", onWindowResize, false);
+    function zoomTorus(event: WheelEvent) {
+      console.log(event);
+      transition(cameraZoom, -event.deltaY / 50);
+    }
+
+    function cameraZoom(quantity: GLfloat) {
+      if (camera.fov + quantity > 30 && camera.fov + quantity < 75) {
+        camera.fov += quantity;
+        camera.updateProjectionMatrix();
+      }
+    }
+    function transition(func: (quantity: GLfloat) => void, quantity: GLfloat) {
+      var intervalTime = 15;
+      //We make a small version of the same movement : move 1/10 of the original quantity every intervalTime
+      var interval = setInterval(function () {
+        func(quantity / 10);
+      }, intervalTime);
+      //We stop doing the movement when we have done 10 times the small movement
+      setTimeout(function () {
+        clearInterval(interval);
+      }, intervalTime * 10);
+    }
+    function onWindowResize() {
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+    }
     let mouseX = 0;
     let mouseY = 0;
     function animateParticles(event: MouseEvent) {
@@ -104,15 +108,20 @@ export const Background = ({ label }: { label: string }) => {
     const clock = new THREE.Clock();
     // Animation loop
     const animate = () => {
-      requestAnimationFrame(animate);
       const elapsedTime = clock.getElapsedTime();
-      particlesMesh.rotation.y = mouseY * (elapsedTime * 0.00008);
+      // camera.position.set(1, 1, 1);
+      particlesMesh.rotation.y = -0.1 * elapsedTime;
+      if (mouseX > 0) {
+        particlesMesh.rotation.y = -mouseY * (elapsedTime * 0.00008);
+        particlesMesh.rotation.x = -mouseX * (elapsedTime * 0.00008);
+      }
       torus.rotation.y += 0.001;
       torus.rotation.x += 0.001;
       // Render scene with camera
       if (scene && camera && renderer) {
         renderer.render(scene, camera);
       }
+      requestAnimationFrame(animate);
     };
 
     // Start animation loop
