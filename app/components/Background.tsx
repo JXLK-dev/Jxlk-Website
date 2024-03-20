@@ -2,6 +2,8 @@ import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { TextGeometry } from "three/addons/geometries/TextGeometry.js";
 import { FontLoader } from "three/addons/loaders/FontLoader.js";
+import { motion } from "framer-motion";
+import { BackgroundLabel } from "./BackgroundLabel";
 export const Background = ({ label }: { label: string }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const sceneRef = useRef<THREE.Scene | null>(null);
@@ -36,10 +38,10 @@ export const Background = ({ label }: { label: string }) => {
 
     // Create the material with the texture
     const torusMaterial = new THREE.PointsMaterial({
-      color: "#BDFFFE",
+      color: "#66FFFF",
       size: 0.01,
     });
-    const particleMaterial = new THREE.PointsMaterial({
+    const particlesMaterial = new THREE.PointsMaterial({
       color: "#BDFFFE",
       size: 0.005,
       blending: THREE.AdditiveBlending,
@@ -60,7 +62,10 @@ export const Background = ({ label }: { label: string }) => {
 
     torusRef.current = torus;
     // Add the torus to the scene
-    const particlesMesh = new THREE.Points(particlesGeometry, torusMaterial);
+    const particlesMesh = new THREE.Points(
+      particlesGeometry,
+      particlesMaterial
+    );
     scene.add(torus, particlesMesh);
 
     // Add renderer to container
@@ -72,6 +77,7 @@ export const Background = ({ label }: { label: string }) => {
     document.addEventListener("mousemove", animateParticles);
     document.addEventListener("wheel", zoomTorus, false);
     window.addEventListener("resize", onWindowResize, false);
+    // Handle zoom background
     function zoomTorus(event: WheelEvent) {
       console.log(event);
       transition(cameraZoom, -event.deltaY / 50);
@@ -94,13 +100,17 @@ export const Background = ({ label }: { label: string }) => {
         clearInterval(interval);
       }, intervalTime * 10);
     }
+
+    // Handle window resize
     function onWindowResize() {
       renderer.setSize(window.innerWidth, window.innerHeight);
       camera.aspect = window.innerWidth / window.innerHeight;
       camera.updateProjectionMatrix();
     }
+
     let mouseX = 0;
     let mouseY = 0;
+    // Handle mouse move for particles animation
     function animateParticles(event: MouseEvent) {
       mouseX = event.clientX;
       mouseY = event.clientY;
@@ -110,12 +120,12 @@ export const Background = ({ label }: { label: string }) => {
     const animate = () => {
       const elapsedTime = clock.getElapsedTime();
       // camera.position.set(1, 1, 1);
-      particlesMesh.rotation.y = -0.1 * elapsedTime;
+      particlesMesh.rotation.y = -0.05 * elapsedTime;
       if (mouseX > 0) {
         particlesMesh.rotation.y = -mouseY * (elapsedTime * 0.00008);
         particlesMesh.rotation.x = -mouseX * (elapsedTime * 0.00008);
       }
-      torus.rotation.y += 0.001;
+      torus.rotation.y += 0.002;
       torus.rotation.x += 0.001;
       // Render scene with camera
       if (scene && camera && renderer) {
@@ -137,9 +147,7 @@ export const Background = ({ label }: { label: string }) => {
 
   return (
     <div ref={containerRef} className="fixed bg-gradient-to-bl">
-      <div className="fixed -z-0 md:text-[300px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-red-800 dark:bg-gradient-to-r dark:from-indigo-800 dark:to-cyan-800 inline-block text-transparent bg-clip-text font-extrabold opacity-50">
-        {label}
-      </div>
+      <BackgroundLabel label={label} />
     </div>
   );
 };

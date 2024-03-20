@@ -14,7 +14,7 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       keyframes: {
-        slowFloating: {
+        floating: {
           "0%": {
             transform: " translate(0px,0px)",
             backgroundColor: "white",
@@ -23,7 +23,7 @@ const config: Config = {
           "20%": { transform: " translate(0px,-7px)" },
           "40%": {
             transform: " translate(0px,-4px)",
-            backgroundColor: "black",
+            backgroundColor: "transparent",
             color: "white",
           },
           "70%": { transform: " translate(0px,-10px)" },
@@ -39,9 +39,9 @@ const config: Config = {
           },
           "20%": { transform: " translate(0px,-7px)" },
           "40%": {
-            transform: " translate(0px,-4px)",
+            transform: " translate(0px,0px)",
           },
-          "70%": { transform: " translate(0px,-10px)" },
+          "70%": { transform: " translate(0px,7px)" },
           "100%": {
             transform: " translate(0px,0px)",
           },
@@ -60,7 +60,7 @@ const config: Config = {
       },
       animation: {
         blinking: "blinking 2s transition infinite",
-        floating: "slowFloating 3s transition infinite",
+        floating: "floating 3s transition infinite",
         slowfloating: "slowFloating 3s transition infinite",
         exitFloating: "exitFloating 2s transition",
       },

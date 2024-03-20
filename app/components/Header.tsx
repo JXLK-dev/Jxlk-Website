@@ -46,7 +46,7 @@ export const Header = () => {
   const headerHref = ["#", "#", "#", "#"];
   let headerList: JSX.Element[] = [];
   const elevatedButtonClass =
-    "bg-transparent md:px-4 md:py-1 md:rounded-2xl md:hover:border-[3px] md:hover:border-black md:animate-[exitFloating_2s] md:hover:shadow-xl md:transition md:hover:duration-500 md:hover:motion-safe:animate-[slowFloating_3s_infinite] font-extrabold ";
+    "bg-transparent md:px-4 md:py-1 md:rounded-2xl md:hover:border-[3px] md:hover:border-black md:animate-[exitFloating_2s] md:hover:shadow-xl md:transition md:hover:duration-500 md:hover:motion-safe:animate-[floating_3s_infinite] font-extrabold ";
   headerLabels.forEach((label, index) => {
     headerList.push(
       <motion.li key={index} variants={navbarChildAnimation}>
@@ -61,7 +61,7 @@ export const Header = () => {
     );
   });
   return (
-    <motion.div className=" h-fit sticky top-0 z-10">
+    <motion.div className=" h-fit sticky top-0 z-10 backdrop-filter backdrop-blur-md">
       <motion.nav className="border-gray-200">
         <motion.div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <motion.span className="self-center text-2xl font-semibold whitespace-nowrap md:rounded-xl md:p-2">
@@ -91,7 +91,7 @@ export const Header = () => {
             variants={containerNavBar}
           >
             <motion.ul
-              className="flex flex-col font-medium mt-4 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent"
+              className="flex flex-col font-medium mt-4 rounded-lg drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent"
               variants={navbarParent}
             >
               {headerList}
