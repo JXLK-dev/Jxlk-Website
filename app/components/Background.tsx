@@ -79,12 +79,11 @@ export const Background = ({ label }: { label: string }) => {
     window.addEventListener("resize", onWindowResize, false);
     // Handle zoom background
     function zoomTorus(event: WheelEvent) {
-      console.log(event);
       transition(cameraZoom, -event.deltaY / 50);
     }
 
     function cameraZoom(quantity: GLfloat) {
-      if (camera.fov + quantity > 30 && camera.fov + quantity < 75) {
+      if (camera.fov + quantity > 10 && camera.fov + quantity < 75) {
         camera.fov += quantity;
         camera.updateProjectionMatrix();
       }

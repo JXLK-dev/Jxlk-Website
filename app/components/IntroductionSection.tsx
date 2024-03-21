@@ -35,7 +35,7 @@ export const IntroductionSection = () => {
     },
   };
   return (
-    <div className="pt-32 pb-[400px] block w-1/2 m-auto xl:w-full xl:flex xl:justify-center xl:items-center drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] font-bold">
+    <div className="pt-32 pb-[400px] block w-1/2 m-auto xl:w-full xl:flex xl:justify-center xl:items-center font-bold">
       <motion.div initial="hidden" animate="show" variants={image}>
         <Image
           className="rounded-full border-[5px] border-black h-[40vh] w-auto m-auto"
@@ -45,17 +45,17 @@ export const IntroductionSection = () => {
           alt="Profile picture"
         />
       </motion.div>
-      <div className="text-justify mt-10 xl:w-2/5 xl:ml-10 xl:pb-10">
-        <motion.div
-          className=""
-          initial="hidden"
-          animate="show"
-          variants={introParagraph}
-        >
-          <h1 className="text-center xl:text-left xl:text-6xl xl:pb-3">
+      <motion.div
+        initial="hidden"
+        animate="show"
+        variants={introParagraph}
+        className="text-justify mt-10 xl:w-2/5 xl:ml-10 xl:py-10 xl:px-10 bg-gradient-to-r from-cyan-800 to-blue-600 rounded-xl hover:shadow-xl drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0)]"
+      >
+        <motion.div>
+          <h1 className="text-center xl:text-left xl:text-6xl xl:pb-3 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
             Hi there, I&apos;m Jerry
           </h1>
-          <h2 className="text-center xl:text-left xl:text-4xl xl:pb-7 flex">
+          <h2 className="text-center xl:text-left xl:text-4xl xl:pb-7 flex drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
             I&apos;m a{" "}
             <div className="xl:animate-[slowfloating_3s_infinite] w-fit xl:ml-5 text-green-500">
               Software Engineer
@@ -63,8 +63,8 @@ export const IntroductionSection = () => {
           </h2>
         </motion.div>
 
-        <motion.div initial="hidden" animate="show" variants={introParagraph}>
-          <p className="xl:text-xl">
+        <motion.div>
+          <p className="xl:text-xl drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
             Welcome to my personal website! a final year college student
             pursuing my degree at Bina Nusantara University. As an enthusiastic
             programmer, I&apos;ve dedicated my academic journey to mastering the
@@ -135,7 +135,7 @@ export const IntroductionSection = () => {
             Contact me
           </a>
         </motion.div>
-      </div>
+      </motion.div>
     </div>
   );
 };
