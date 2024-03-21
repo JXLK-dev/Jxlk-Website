@@ -11,7 +11,7 @@ export default function Home() {
   const [depthName, setDepthName] = useState("Introduction");
   return (
     <main className="bg-white min-h-screen text-black bg-gradient-to-b dark:from-blue-950 dark:to-cyan-700 dark:text-white">
-      {/* <IntroLoader /> */}
+      <IntroLoader />
       <Background label={depthName} />
       <Header />
       <IntroductionSection />
