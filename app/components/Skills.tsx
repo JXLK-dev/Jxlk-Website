@@ -5,7 +5,6 @@ import Image from "next/image";
 import {
   faPython,
   faJs,
-  faTs,
   faJava,
   faHtml5,
   faPhp,
@@ -22,39 +21,6 @@ export const Skills: React.FC = () => {
     setActiveButton(buttonName);
   };
 
-  const buttonNames = [
-    "Languages",
-    "Framework",
-    "Content Creation Tools",
-    "Development Tools",
-  ];
-  const childNames = {
-    Languages: [
-      "Python",
-      "JavaScript",
-      "TypeScript",
-      "C",
-      "Dart",
-      "Java",
-      "SQL",
-      "html",
-      "Php",
-      "CSS",
-    ],
-    Framework: [
-      "React.Js",
-      "Next.js",
-      "Express",
-      "Flutter",
-      "Laravel",
-      "TailwindCSS",
-      "Joget DX",
-      "Katalon",
-      "UIPath",
-    ],
-    "Content Creation Tools": ["Figma", "Canva"],
-    "Development Tools": ["Git", "VSCode", "Firebase", "Postman"],
-  };
   const classIcons = "h-10 w-10 text-white fill-current";
 
   const TSIcon = () => (
@@ -209,17 +175,31 @@ export const Skills: React.FC = () => {
     </svg>
   );
   const UiPath = () => (
-    <svg version="1.1" id="layer" viewBox="0 0 652 652" xml:space="preserve">
-      <g id="Page-1">
-        <path
-          id="UiPath_Logo_full"
-          class="st0"
-          d="M25,222.9h204.2v204.2H25V222.9z M208,405.9V244.1H46.2v161.7H208L208,405.9z    M64.6,275.6v61.7c0,28.2,15.5,44.9,41.7,44.9c27,0,42.5-16.7,42.5-44.9v-61.7h-21.2v61.7c0,15.9-6.9,24.9-20.8,24.9   c-14.7,0-21.2-9.4-21.2-24.9v-61.7H64.6z M176.1,288.2c7.4,0,13.1-5.3,13.1-12.7c0-7.8-5.3-13.1-13.1-13.1   c-7.4,0-13.1,5.3-13.1,13.1C163.1,282.9,168.8,288.2,176.1,288.2z M165.5,298V381h21.2V298H165.5z M292.1,347.1   c22.9,0,38-13.5,38-35.9c0-21.6-14.7-35.5-38-35.5h-40v105.8h21.2v-33.9h18.8V347.1z M289.7,330.3h-16.7v-37.6h16.7   c12.3,0,18.8,6.9,18.8,18.4C308.5,323.4,301.9,330.3,289.7,330.3z M337.1,339.7c0,24.9,15.9,42.5,38.4,42.5   c13.5,0,22.1-4.9,27-12.7v11.8h21.2V298h-21.2v13.1c-5.3-8.6-13.9-13.9-27-13.9C352.6,297.2,337.1,315.2,337.1,339.7z M402.4,339.7   c0,14.3-9,23.7-22.1,23.7c-14.3,0-21.6-10.2-21.6-23.7c0-14.7,8.2-24.1,21.6-24.1S402.4,325.4,402.4,339.7z M476.7,363   c-8.2,0-10.2-3.7-10.2-11V316h18.4v-18h-18.4v-22.9h-21.2V298h-9.8v18h9.8V352c0,19.6,8.6,29,29,29h11v-18H476.7z M518,309.9v-39.2   h-21.2v110.7H518v-44.1c0-14.3,7.4-22.9,20-22.9c12.3,0,18.8,8.2,18.8,20.8V381H578v-47.8c0-21.6-15.5-35.9-35.1-35.9   C530.7,297.2,522.9,301.7,518,309.9z M576.4,270.3v3.3h6.9v21.2h4.1v-21.2h6.5v-3.3H576.4z M620.5,270.3l-8.6,19.6l-8.2-19.6h-4.9   v24.5h3.7V276l8.2,18.8h2.9l7.8-18.8v18.8h3.7v-24.5H620.5L620.5,270.3z"
-        />
+    <svg
+      className="text-white fill-white h-10"
+      version="1.1"
+      id="katman_1"
+      x="0px"
+      y="0px"
+      viewBox="0 0 534 275"
+    >
+      <g id="uipath-cs-color">
+        <g id="Group">
+          <path
+            id="UiPath_Logo_full"
+            d="M72,129h144v144H72V129z M201,258V144H87v114H201L201,258z M99.9,166.2v43.5    c0,19.9,10.9,31.7,29.4,31.7c19,0,29.9-11.8,29.9-31.7v-43.5h-15v43.5c0,11.2-4.9,17.6-14.7,17.6c-10.4,0-15-6.6-15-17.6v-43.5    H99.9z M178.5,175.1c5.2,0,9.2-3.7,9.2-8.9c0-5.5-3.7-9.2-9.2-9.2c-5.2,0-9.2,3.7-9.2,9.2C169.3,171.3,173.4,175.1,178.5,175.1z     M171.1,182v58.5h15V182H171.1z M260.3,216.6c16.1,0,26.8-9.5,26.8-25.3c0-15.3-10.4-25.1-26.8-25.1h-28.2v74.6h15v-23.9h13.2    V216.6z M258.6,204.7h-11.8v-26.5h11.8c8.6,0,13.2,4.9,13.2,13C271.8,199.8,267.2,204.7,258.6,204.7z M292,211.4    c0,17.6,11.2,30,27.1,30c9.5,0,15.5-3.5,19-8.9v8.4h15V182h-15v9.2c-3.7-6-9.8-9.8-19-9.8C302.9,181.4,292,194.1,292,211.4z     M338.1,211.4c0,10.1-6.3,16.7-15.5,16.7c-10.1,0-15.3-7.2-15.3-16.7c0-10.4,5.8-17,15.3-17C332,194.4,338.1,201.3,338.1,211.4z     M390.5,227.8c-5.8,0-7.2-2.6-7.2-7.8v-25.3h13V182h-13v-16.1h-15V182h-6.9v12.7h6.9V220c0,13.8,6,20.4,20.4,20.4h7.8v-12.7H390.5    z M419.6,190.3v-27.6h-15v78h15v-31.1c0-10.1,5.2-16.1,14.1-16.1c8.6,0,13.2,5.8,13.2,14.7v32.3h15v-33.7    c0-15.3-10.9-25.3-24.8-25.3C428.5,181.4,423,184.6,419.6,190.3z"
+          />
+        </g>
       </g>
     </svg>
   );
-  const childIcons = {
+  interface Map {
+    [key: string]: string[];
+  }
+  interface MapIcon {
+    [key: string]: JSX.Element[];
+  }
+  const childIcons: MapIcon = {
     Languages: [
       <FontAwesomeIcon className={classIcons} key="python" icon={faPython} />,
       <FontAwesomeIcon className={classIcons} key="javascript" icon={faJs} />,
@@ -239,8 +219,6 @@ export const Skills: React.FC = () => {
       <FlutterIcon key="Flutter" />,
       <FontAwesomeIcon className={classIcons} key="laravel" icon={faLaravel} />,
       <TailwindCss key="Tailwind" />,
-      <JogetDx key="Joget" />,
-      <KatalonStudio key="Katalon" />,
     ],
     "Content Creation Tools": [<Figma key="Figma" />, <Canva key="Canva" />],
     "Development Tools": [
@@ -248,6 +226,47 @@ export const Skills: React.FC = () => {
       <VSCode key="VSCode" />,
       <FirebaseIcon key="Firebase" />,
       <PostMan key="PostMan" />,
+      <JogetDx key="Joget" />,
+      <KatalonStudio key="Katalon" />,
+      <UiPath key="UiPath" />,
+    ],
+  };
+  const buttonNames = [
+    "Languages",
+    "Framework",
+    "Content Creation Tools",
+    "Development Tools",
+  ];
+  const childNames: Map = {
+    Languages: [
+      "Python",
+      "JavaScript",
+      "TypeScript",
+      "C",
+      "Dart",
+      "Java",
+      "SQL",
+      "html",
+      "Php",
+      "CSS",
+    ],
+    Framework: [
+      "React.Js",
+      "Next.js",
+      "Express",
+      "Flutter",
+      "Laravel",
+      "TailwindCSS",
+    ],
+    "Content Creation Tools": ["Figma", "Canva"],
+    "Development Tools": [
+      "Git",
+      "VSCode",
+      "Firebase",
+      "Postman",
+      "Joget DX",
+      "Katalon",
+      "UIPath",
     ],
   };
   return (

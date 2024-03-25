@@ -2,7 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 interface SkillProps {
   label: string;
-  icon: string;
+  icon: any;
 }
 
 export const Skill: React.FC<SkillProps> = ({ label, icon }) => {

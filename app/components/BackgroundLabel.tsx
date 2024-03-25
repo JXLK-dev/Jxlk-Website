@@ -63,11 +63,11 @@ export const BackgroundLabel = ({ label }: { label: string }) => {
       console.log(currentNumber);
       if (currentNumber < 400) {
         setDepthName("Introduction");
-      } else if (currentNumber < 1200) {
+      } else if (currentNumber < 1500) {
         setDepthName("About Me");
-      } else if (currentNumber < 1400) {
+      } else if (currentNumber < 1800) {
         setDepthName("Project");
-      } else if (currentNumber < 1600) {
+      } else if (currentNumber < 2400) {
         setDepthName("Experience");
       } else {
         setDepthName("Contact");
