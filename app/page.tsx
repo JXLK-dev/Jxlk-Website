@@ -6,6 +6,7 @@ import { IntroductionSection } from "../app/components/IntroductionSection";
 import { Project } from "../app/components/Project";
 import { Background } from "../app/components/Background";
 import { About } from "../app/components/About";
+import { Quote } from "../app/components/Quote";
 import { useState } from "react";
 export default function Home() {
   const [depthName, setDepthName] = useState("Introduction");
@@ -15,6 +16,7 @@ export default function Home() {
       <Background label={depthName} />
       <Header />
       <IntroductionSection />
+      <Quote quote="Work Hard In Silenece, Let Your Success Be Your Noise" />
       <About />
       <Project />
       {/* <Background label="Project" /> */}

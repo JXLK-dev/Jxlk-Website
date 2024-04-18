@@ -19,9 +19,9 @@ export const About: React.FC = () => {
     },
   };
   return (
-    <div className="pt-0 pb-[100px] block w-1/2 m-auto xl:w-full xl:justify-center xl:items-center font-bold ">
+    <div className="pt-0 pb-[100px] block w-1/2 m-auto xl:w-full xl:justify-center xl:items-center font-bold">
       <motion.div
-        className="m-auto w-1/2 mb-10 xl:py-10 xl:px-10 bg-gradient-to-r from-cyan-800 to-blue-600 rounded-xl hover:shadow-xl drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0)]"
+        className="m-auto w-1/2 mb-10 xl:py-10 xl:px-10 bg-gradient-to-r from-cyan-600 to-blue-600 rounded-xl hover:shadow-xl drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0)] border-4 border-white"
         initial="hidden"
         animate="show"
         variants={introParagraph}

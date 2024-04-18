@@ -35,7 +35,7 @@ export const IntroductionSection = () => {
     },
   };
   return (
-    <div className="pt-32 pb-[400px] block w-1/2 m-auto xl:w-full xl:flex xl:justify-center xl:items-center font-bold">
+    <div className="pt-32 block w-1/2 m-auto xl:w-full xl:flex xl:justify-center xl:items-center font-bold">
       <motion.div initial="hidden" animate="show" variants={image}>
         <Image
           className="rounded-full border-[5px] border-black h-[40vh] w-auto m-auto"
@@ -49,7 +49,7 @@ export const IntroductionSection = () => {
         initial="hidden"
         animate="show"
         variants={introParagraph}
-        className="text-justify mt-10 xl:w-2/5 xl:ml-10 xl:py-10 xl:px-10 bg-gradient-to-r from-cyan-800 to-blue-600 rounded-xl hover:shadow-xl drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0)]"
+        className="text-justify mt-10 xl:w-2/5 xl:ml-10 xl:py-10 xl:px-10 bg-gradient-to-r from-cyan-600 to-blue-600 rounded-xl hover:shadow-xl drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0)] border-4 border-white"
       >
         <motion.div>
           <h1 className="text-center xl:text-left xl:text-6xl xl:pb-3 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
